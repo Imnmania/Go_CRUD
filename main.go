@@ -25,6 +25,7 @@ func main() {
 			"message": "Welcome to CRUD API with Golang!!!",
 		})
 	})
+	r.POST("/posts")
 
 	r.Run()
 }
