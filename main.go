@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/imnmania/go_crud/controllers"
 	"github.com/imnmania/go_crud/initializers"
 )
 
@@ -25,7 +26,12 @@ func main() {
 			"message": "Welcome to CRUD API with Golang!!!",
 		})
 	})
-	r.POST("/posts")
+
+	r.POST("/posts", controllers.PostsCreate)
+	r.GET("/posts", controllers.PostsGetAll)
+	r.GET("/posts/:id", controllers.PostsGetById)
+	r.PUT("/posts/:id", controllers.PostsUpdate)
+	r.DELETE("/posts/:id", controllers.PostsDelete)
 
 	r.Run()
 }
